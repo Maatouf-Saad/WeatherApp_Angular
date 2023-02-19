@@ -75,3 +75,49 @@ body {
     text-align: center;
     font-weight: 900;
 }
+
+.more-info-label {
+    color: var(--white);
+}
+
+.more-info-container {
+    flex: 1;
+    background-color: var(--shadow-light);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    margin-top: 1em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.info-block {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+}
+
+.info-block-label {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-block-label img {
+    width: 1em;
+}
+
+.info-block-label span {
+    color: var(--white);
+    font-size: 0.8em;
+}
+
+.info-block-value {
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: var(--white);
+}
