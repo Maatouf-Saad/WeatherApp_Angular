@@ -1,4 +1,61 @@
-<div class="container">
+<div class="container" *ngIf="weatherData">
+  <div class="upper-data">
+    <img src="../assets/hot.jpg" *ngIf = " weatherData.main.temp > 15 ">
+    <img src="../assets/cold.jpg" *ngIf = " weatherData.main.temp <= 15">
+
+    <div class="weather-data">
+      <div class="location">{{ weatherData.name }}</div>
+      <div class="temperature"> {{ ((weatherData.main.temp - 32) * (5/9)).toFixed(2) }}°C</div>
+    </div>
+  </div>
+
+
+  <div class="lower-data">
+      <div class="more-info-label">
+        More informations
+      </div>
+      <div class="more-info-container">
+        <div class="info-block">
+          <div class="info-block-label">
+            <img src="../assets/thermometre.png">
+            <span>min</span>
+          </div>
+          <div class="info-block-value">
+            {{ ((weatherData.main.temp_min - 32) * (5/9)).toFixed(2) }}°C
+          </div>
+        </div> 
+        <div class="info-block">
+            <div class="info-block-label">
+              <img src="../assets/thermometrehot.png" alt="max">
+              <span>max</span>
+            </div>
+            <div class="info-block-value">
+              {{ ((weatherData.main.temp_max - 32) * (5/9)).toFixed(2) }}°C
+            </div>
+        </div> 
+        <div class="info-block">
+              <div class="info-block-label">
+                <img src="../assets/humidity.png" alt="min">
+                <span>humidity</span>
+              </div>
+              <div class="info-block-value">
+                {{weatherData.main.humidity}}%
+              </div>
+        </div>
+        <div class="info-block">
+          <div class="info-block-label">
+            <img src="../assets/vent.png" alt="min">
+            <span>wind</span>
+          </div>
+          <div class="info-block-value">
+            {{weatherData.wind.speed}} km/h
+          </div>
+        </div>  
+      </div>
+  </div>
+</div>
+
+<!--<div class="container">
   <div class="upper-data">
     <img src="../assets/hot.jpg" *ngIf = " 14 > 15 ">
     <img src="../assets/cold.jpg" *ngIf = " 14 <= 15">
@@ -53,5 +110,5 @@
         </div>  
       </div>
   </div>
-</div>
+</div>-->
 
